@@ -146,6 +146,8 @@ public:
 
     int GetContourIndexByPathPosPoint(mitk::Point3D posPoint, unsigned int t = 0);
 
+    int GetInsertingContourIndexByTagIndex(int tagIndex, unsigned int t = 0);
+
     //virtual methods, that need to be implemented
     virtual void UpdateOutputInformation() override;
     virtual void SetRequestedRegionToLargestPossibleRegion() override;
@@ -182,6 +184,10 @@ public:
     bool IsDataModified(){return m_DataModified;}
     void SetDataModified(bool modified = true){m_DataModified=modified;}
 
+    double GetResliceSize() const {return m_ResliceSize;}
+
+    void SetResliceSize(double size) {m_ResliceSize=size;}
+
   protected:
 
     mitkCloneMacro(Self);
@@ -213,6 +219,8 @@ public:
     svLoftingParam *m_LoftingParam;
 
     bool m_DataModified;
+
+    double m_ResliceSize;
 
   };
 

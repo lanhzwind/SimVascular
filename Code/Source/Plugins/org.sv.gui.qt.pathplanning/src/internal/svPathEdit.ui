@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>347</width>
-    <height>626</height>
+    <width>364</width>
+    <height>695</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -21,7 +21,19 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
-    <number>6</number>
+    <number>5</number>
+   </property>
+   <property name="leftMargin">
+    <number>5</number>
+   </property>
+   <property name="topMargin">
+    <number>5</number>
+   </property>
+   <property name="rightMargin">
+    <number>5</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
    </property>
    <item>
     <widget class="QWidget" name="widget_3" native="true">
@@ -54,7 +66,7 @@
       <item row="0" column="2">
        <widget class="QPushButton" name="btnChange">
         <property name="text">
-         <string>Change</string>
+         <string>Change Type</string>
         </property>
        </widget>
       </item>
@@ -161,6 +173,9 @@
       <item>
        <widget class="QWidget" name="widget_5" native="true">
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>6</number>
+         </property>
          <property name="leftMargin">
           <number>0</number>
          </property>
@@ -174,57 +189,66 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QPushButton" name="buttonSmartAdd">
+          <widget class="QLabel" name="label">
            <property name="text">
-            <string>Smart Add</string>
+            <string>Adding Mode:</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="btnAddToEnd">
+          <widget class="QComboBox" name="comboBoxAddingMode">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>Add to End</string>
+            <string/>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="btnAddToTop">
+          <widget class="QPushButton" name="buttonAdd">
            <property name="text">
-            <string>Add to Top</string>
+            <string>Add</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="buttonInsertAbove">
+          <widget class="QPushButton" name="buttonAddManually">
            <property name="text">
-            <string>Insert Above</string>
+            <string>Add Manually</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="Line" name="line">
-           <property name="midLineWidth">
-            <number>2</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btnSmooth">
+          <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>Smooth</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="Line" name="line_2">
-           <property name="midLineWidth">
-            <number>2</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <string/>
            </property>
           </widget>
          </item>
@@ -232,6 +256,20 @@
           <widget class="QPushButton" name="buttonDelete">
            <property name="text">
             <string>Delete</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnSmooth">
+           <property name="text">
+            <string>Smooth</string>
            </property>
           </widget>
          </item>

@@ -17,6 +17,8 @@ class SVPATH_EXPORT svPath : public mitk::BaseData
 {
 public:
 
+    enum AddingMode {SMART=0, BEGINNING=1, END=2, BEFORE=3, AFTER=4};
+
     mitkClassMacro(svPath, mitk::BaseData);
     itkFactorylessNewMacro(Self)
     itkCloneMacro(Self)
@@ -62,6 +64,10 @@ public:
 
     int GetCalculationNumber() const;
 
+    double GetResliceSize() const {return m_ResliceSize;}
+
+    void SetResliceSize(double size) {m_ResliceSize=size;}
+
     svPathOperation::PathOperationType GetOperationType();
 
     //virtual methods, that need to be implemented
@@ -73,6 +79,9 @@ public:
 
     bool IsDataModified();
     void SetDataModified(bool modified = true);
+
+    AddingMode GetAddingMode() { return m_AddingMode;}
+    void SetAddingMode(AddingMode mode) { m_AddingMode=mode;}
 
   protected:
 
@@ -106,6 +115,10 @@ public:
     svPathOperation::PathOperationType m_OperationType;
 
     bool m_DataModified;
+
+    double m_ResliceSize;
+
+    AddingMode m_AddingMode;
   };
 
 SVPATH_EXPORT bool Equal( const svPath* leftHandSide, const svPath* rightHandSide, mitk::ScalarType eps, bool verbose );

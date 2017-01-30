@@ -7,6 +7,7 @@ svContourGroup::svContourGroup()
     , m_GroupID(-1)
     , m_CurrentIndexOn2DView(-2)
     , m_DataModified(false)
+    , m_ResliceSize(5.0)
 {
     this->InitializeEmpty();
     m_LoftingParam=new svContourGroup::svLoftingParam();
@@ -19,6 +20,7 @@ svContourGroup::svContourGroup(const svContourGroup &other)
     , m_ContourSets(other.GetTimeSize())
     , m_DataModified(true)
     , m_CalculateBoundingBox(true)
+    , m_ResliceSize(other.m_ResliceSize)
 {
     for (std::size_t t = 0; t < other.GetTimeSize(); ++t)
     {
@@ -573,6 +575,24 @@ int svContourGroup::GetInsertingContourIndexByPathPosPoint(mitk::Point3D posPoin
         return 0;
 
     return svMath3::GetInsertintIndexByDistance(GetContourPathPosPoints(t),posPoint);
+}
+
+int svContourGroup::GetInsertingContourIndexByTagIndex(int tagIndex, unsigned int t)
+{
+    for(int i=0;i<GetSize(t);i++)
+    {
+      svContour* contour=GetContour(i,t);
+      if(!contour)
+          continue;
+
+      if(tagIndex<=contour->GetTagIndex())
+          return i;
+    }
+
+    if(GetSize(t)==0)
+        return 0;
+    else
+        return GetSize(t);
 }
 
 int svContourGroup::GetContourIndexByPathPosPoint(mitk::Point3D posPoint, unsigned int t)
